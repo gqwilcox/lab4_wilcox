@@ -13,8 +13,7 @@ public class SelectQuestions extends PostgresConnectionHandler {
      * @return A list of Strings that represent the categories.
      */
     public List<String> getAllDistinctCategoryNames() {
-        return null;
-    }
+        return this.dbAdapter.getCategories();}
 
     /**
      * Returns a list of Films with the length longer than a particular value.
@@ -22,7 +21,7 @@ public class SelectQuestions extends PostgresConnectionHandler {
      * @return A list of films with a length longer than "length"
      */
     public List<Film> getAllFilmsWithALengthLongerThanX(int length) {
-        return null;
+        return this.dbAdapter.checkFilmLength(length);
     }
 
     /**
@@ -31,7 +30,7 @@ public class SelectQuestions extends PostgresConnectionHandler {
      * @return A list of actors all sharing the first letter in the first name.
      */
     public List<Actor> getActorsFirstNameStartingWithX(char firstLetter) {
-        return null;
+        return this.dbAdapter.checkFirstLetterFirstName(firstLetter);
     }
 }
 
